@@ -1416,7 +1416,12 @@ document.addEventListener('click', function(e) {
   }
 
   // Wire up product cards
+  const heart = e.target.closest('.card-heart');
   const card = e.target.closest('.product-card');
+  if (heart) {
+    e.stopPropagation();
+    return;
+  }
   if (card) {
     navigateTo('product');
   }
