@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Collection — ideca Designs Inc.</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet"/>
+<title>Ivory Reverie Gown — ideca Designs Inc.</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -15,16 +15,21 @@
   --off-white: #F7F4EC;
   --dark: #1a1a18;
   --mid: #6b6b60;
+  --light: #e8e4d8;
 }
-html, body { font-family: 'Montserrat', sans-serif; background: linear-gradient(160deg, #FDFCF8 0%, #F7F2E4 40%, #EFE5C4 100%); background-attachment: fixed; color: var(--dark); overflow-x: hidden; min-height: 100vh; }
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(160deg, #FDFCF8 0%, #F7F2E4 40%, #EFE5C4 100%);
+  background-attachment: fixed;
+  color: var(--dark); overflow-x: hidden; min-height: 100vh;
+}
 
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 3.5rem; height: 72px;
-  background: rgba(253,252,248,0.92);
-  backdrop-filter: blur(12px);
+  background: rgba(253,252,248,0.92); backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(201,168,76,0.15);
 }
 .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
@@ -43,215 +48,292 @@ nav {
   transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
 }
 .nav-links a:hover { color: var(--gold-dark); }
-.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav-links a:hover::after { transform: scaleX(1); }
 .nav-links a.active { color: var(--gold-dark); }
+.nav-links a.active::after { transform: scaleX(1); }
 
-/* ── PAGE HEADER ── */
-.page-header {
-  padding: 110px 3.5rem 2.5rem;
-  background: transparent;
-  border-bottom: 1px solid rgba(201,168,76,0.15);
-}
-.page-header-inner {
-  display: flex; align-items: flex-end; justify-content: space-between;
-  margin-bottom: 2rem;
-}
-.page-title-eyebrow {
-  font-size: 0.55rem; letter-spacing: 0.4em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 0.5rem;
-}
-.page-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 200;
-  color: var(--dark); letter-spacing: 0.05em;
-}
-.page-title em { font-style: italic; color: var(--gold-dark); }
-.item-count {
-  font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--mid); padding-bottom: 0.5rem;
-}
+/* ── PAGE WRAP ── */
+.page-wrap { padding: 96px 3.5rem 5rem; max-width: 1400px; margin: 0 auto; }
 
-/* ── FILTER BAR ── */
-.filter-bar {
-  display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;
-  padding: 1rem 0;
+/* ── BREADCRUMB ── */
+.breadcrumb {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--mid);
 }
-.filter-label {
-  font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--gold); white-space: nowrap; margin-right: 0.4rem;
-}
-.filter-group {
-  display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem;
-  flex: 1;
-}
-.filter-btn {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.58rem; font-weight: 300; letter-spacing: 0.15em;
-  text-transform: uppercase; color: var(--mid);
-  background: rgba(253,252,248,0.7);
-  border: 0.5px solid rgba(201,168,76,0.25);
-  border-radius: 50px; cursor: pointer;
-  padding: 0.5rem 1.2rem; transition: all 0.25s;
-  backdrop-filter: blur(4px);
-}
-.filter-btn:hover { color: var(--gold-dark); border-color: var(--gold); background: rgba(253,252,248,0.95); }
-.filter-btn.active { color: var(--white); background: linear-gradient(120deg, var(--gold-dark), var(--gold)); border-color: transparent; }
+.breadcrumb a { color: var(--mid); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--gold); }
+.breadcrumb span { color: var(--gold); }
 
-.filter-custom {
-  margin-left: auto;
-}
-
-.sort-wrap {
-  display: flex; align-items: center; gap: 0.8rem;
-  padding-left: 1rem;
-  border-left: 0.5px solid rgba(201,168,76,0.2);
-}
-.sort-label {
-  font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--mid); white-space: nowrap;
-}
-.sort-select {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.58rem; font-weight: 300; letter-spacing: 0.1em;
-  color: var(--dark); background: rgba(253,252,248,0.7);
-  border: 0.5px solid rgba(201,168,76,0.25);
-  border-radius: 50px;
-  padding: 0.45rem 1rem; cursor: pointer; outline: none;
-  transition: border-color 0.25s;
-}
-.sort-select:hover { border-color: var(--gold); }
-
-/* ── GRID ── */
-.shop-grid-wrap { padding: 3rem 3.5rem 5rem; }
-.shop-grid {
+/* ── IMAGE SHOWCASE ── */
+.showcase {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  align-items: stretch;
 }
-
-/* ── PRODUCT CARD ── */
-.product-card {
+.showcase-main {
   position: relative;
-  display: flex; flex-direction: column;
-  cursor: pointer;
+  border-radius: 20px; overflow: hidden;
+  background: linear-gradient(160deg, #ede8d8, #d8cfa8);
+  height: 100%;
+  min-height: 480px;
 }
-
-.card-image-wrap {
-  position: relative; overflow: hidden;
-  aspect-ratio: 2/3;
-  background: #FFFFFF;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(201,168,76,0.1);
+.showcase-tag {
+  position: absolute; top: 16px; right: 16px;
+  background: rgba(253,252,248,0.95);
+  font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--dark); padding: 6px 14px; border-radius: 50px;
+  border: 0.5px solid rgba(201,168,76,0.2);
 }
-
-
-
-
-/* cards are all white */
-
-/* Zoom on hover (mouse devices only) */
-@media (hover: hover) {
-  .card-image-wrap img,
-  .card-img-placeholder {
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-  .product-card:hover .card-img-placeholder { transform: scale(1.06); }
+.showcase-collage {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  height: 100%;
 }
-
-.card-img-placeholder {
-  width: 100%; height: 100%;
+.showcase-collage-img {
+  border-radius: 16px; overflow: hidden;
+  background: linear-gradient(160deg, #e4dcc8, #cfc299);
+}
+.showcase-collage-img:nth-child(3) {
+  grid-column: 1 / -1;
+  background: linear-gradient(160deg, #f0ebdc, #ddd4b2);
+}
+.img-placeholder {
+  width: 100%; height: 100%; min-height: 120px;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 0.5rem;
 }
-.card-img-placeholder svg { opacity: 0.18; }
-.card-img-placeholder span {
+.img-placeholder svg { opacity: 0.18; }
+.img-placeholder span {
   font-size: 0.48rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--gold-dark); opacity: 0.45;
+  color: var(--gold-dark); opacity: 0.5;
 }
 
-/* ── ALWAYS VISIBLE: Heart + Rating ── */
-.card-heart {
-  position: absolute; top: 10px; left: 10px; z-index: 10;
-  width: 42px; height: 42px;
-  background: rgba(253,252,248,0.88);
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; border-radius: 50px;
-  transition: background 0.2s, transform 0.2s;
-  backdrop-filter: blur(4px);
-  border: 0.5px solid rgba(201,168,76,0.2);
-}
-.card-heart:hover { background: #fff; transform: scale(1.1); }
-.card-heart svg { width: 18px; height: 18px; transition: fill 0.2s, stroke 0.2s; }
-.card-heart.liked svg { fill: #e05a6e; stroke: #e05a6e; }
-
-.card-rating {
-  position: absolute; top: 10px; right: 10px; z-index: 10;
-  display: flex; align-items: center; gap: 4px;
-  background: rgba(253,252,248,0.88);
-  padding: 6px 12px; border-radius: 50px;
-  backdrop-filter: blur(4px);
-  border: 0.5px solid rgba(201,168,76,0.2);
-}
-.card-rating .star {
-  font-size: 13px; color: var(--gold); line-height: 1;
-}
-.card-rating .rating-num {
-  font-size: 0.68rem; font-weight: 300; letter-spacing: 0.05em;
-  color: var(--dark);
+/* ── PRODUCT DETAILS GRID ── */
+.product-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1.5rem;
+  align-items: stretch;
 }
 
-/* ── HOVER INFO (mouse only) ── */
-.card-hover-info {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 1rem 0.9rem 0.9rem;
-  background: linear-gradient(to top, rgba(253,252,248,0.97) 60%, transparent 100%);
-  transform: translateY(100%);
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-/* On touch/non-hover devices show info always */
-@media (hover: none) {
-  .card-hover-info { transform: translateY(0) !important; position: relative; background: var(--white); padding: 0.7rem 0; }
-}
-@media (hover: hover) {
-  .product-card:hover .card-hover-info { transform: translateY(0); }
+/* ── LEFT PANEL ── */
+.product-left {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2rem 2.2rem;
+  border: 0.5px solid rgba(201,168,76,0.12);
 }
 
-.card-item-name {
-  font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em;
-  color: var(--dark); margin-bottom: 0.25rem;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+/* Name + heart */
+.product-name-row {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 0.6rem;
 }
-.card-item-price {
+.product-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem; font-weight: 300;
-  background: linear-gradient(120deg, var(--gold-dark), var(--gold), var(--gold-light));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: 0.05em;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 300; color: var(--dark); line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+.fav-btn {
+  background: none; border: none; cursor: pointer;
+  padding: 4px; transition: transform 0.2s;
+  flex-shrink: 0; margin-top: 4px;
+}
+.fav-btn:hover { transform: scale(1.15); }
+.fav-btn svg { width: 22px; height: 22px; }
+.fav-btn.liked svg { fill: #e05a6e; stroke: #e05a6e; }
+
+/* Rating row */
+.rating-row {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 1px; }
+.rating-score { font-size: 0.7rem; font-weight: 400; color: var(--dark); }
+.rating-count { font-size: 0.65rem; color: var(--mid); }
+.rating-new { font-size: 0.6rem; color: var(--gold-dark); font-weight: 400; }
+
+/* Color + size row */
+.options-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; margin-bottom: 1.8rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 0.5px solid rgba(201,168,76,0.15);
+}
+.option-label {
+  font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--mid); margin-bottom: 0.75rem;
+}
+.color-swatches { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.swatch {
+  display: flex; flex-direction: column; align-items: center; gap: 5px;
+  cursor: pointer; user-select: none;
+}
+.swatch-circle {
+  width: 28px; height: 28px; border-radius: 50%;
+  box-shadow: 0 0 0 2px transparent, 0 0 0 4px transparent;
+  transition: box-shadow 0.2s;
+  position: relative; cursor: pointer;
+}
+.swatch.active .swatch-circle {
+  box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--gold);
+}
+.swatch:hover .swatch-circle {
+  box-shadow: 0 0 0 2px var(--white), 0 0 0 4px rgba(201,168,76,0.5);
+}
+.swatch-name {
+  font-size: 0.5rem; letter-spacing: 0.1em; color: var(--mid);
+  transition: color 0.2s;
+}
+.swatch.active .swatch-name { color: var(--gold-dark); font-weight: 400; }
+
+.size-btns { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.size-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem; font-weight: 300; letter-spacing: 0.1em;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border: 0.5px solid rgba(201,168,76,0.3);
+  border-radius: 10px; cursor: pointer; background: none;
+  color: var(--mid); transition: all 0.2s;
+}
+.size-btn:hover { border-color: var(--gold); color: var(--dark); }
+.size-btn.active {
+  background: linear-gradient(120deg, var(--gold-dark), var(--gold));
+  border-color: transparent; color: var(--white);
 }
 
-/* ── PAGINATION ── */
-.pagination {
+/* Description */
+.desc-section { margin-bottom: 1.8rem; padding-bottom: 1.8rem; border-bottom: 0.5px solid rgba(201,168,76,0.15); }
+.section-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer; margin-bottom: 1rem;
+}
+.section-title-sm {
+  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--dark); font-weight: 400;
+}
+.toggle-icon { font-size: 0.9rem; color: var(--gold); transition: transform 0.3s; }
+.toggle-icon.open { transform: rotate(180deg); }
+.desc-body {
+  font-size: 0.78rem; line-height: 1.85; color: var(--mid); font-weight: 300;
+}
+
+/* Shipping */
+.shipping-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1rem; margin-top: 1rem;
+}
+.shipping-item {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  padding: 0.9rem; border-radius: 12px;
+  background: var(--off-white);
+  border: 0.5px solid rgba(201,168,76,0.1);
+}
+.shipping-icon {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(201,168,76,0.12);
   display: flex; align-items: center; justify-content: center;
-  gap: 0.5rem; padding: 1rem 0 4rem;
+  flex-shrink: 0;
 }
-.page-num {
-  font-size: 0.6rem; letter-spacing: 0.15em;
-  width: 36px; height: 36px;
+.shipping-icon svg { width: 16px; height: 16px; }
+.shipping-info-label {
+  font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--mid); margin-bottom: 0.2rem;
+}
+.shipping-info-val {
+  font-size: 0.7rem; font-weight: 400; color: var(--dark);
+}
+
+/* ── RIGHT PANEL — Price + Buy ── */
+.product-right {
+  display: flex; flex-direction: column; gap: 1rem;
+  align-self: stretch;
+}
+.price-card {
+  background: var(--dark);
+  border-radius: 20px; padding: 1rem 1.5rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+}
+.price-left { display: flex; flex-direction: column; }
+.price-label {
+  font-size: 0.52rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(253,252,248,0.4); margin-bottom: 0.15rem;
+}
+.price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 200;
+  background: linear-gradient(120deg, var(--gold-light), var(--gold), var(--gold-dark));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; letter-spacing: 0.02em; line-height: 1;
+}
+.buy-btn {
+  flex-shrink: 0;
+  padding: 0.85rem 1.8rem;
+  background: linear-gradient(120deg, var(--gold-dark), var(--gold), var(--gold-light));
+  border: none; border-radius: 50px; cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.62rem; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--white); transition: opacity 0.3s;
+  display: flex; align-items: center; gap: 0.6rem; white-space: nowrap;
+}
+.buy-btn:hover { opacity: 0.88; }
+.buy-btn svg { width: 13px; height: 13px; }
+.buy-note { display: none; }
+
+/* Reviews card */
+.reviews-card {
+  background: var(--white);
+  border-radius: 20px; padding: 1.8rem;
+  border: 0.5px solid rgba(201,168,76,0.12);
+  flex: 1; display: flex; flex-direction: column;
+}
+.reviews-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.4rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201,168,76,0.3) transparent;
+}
+.reviews-scroll::-webkit-scrollbar { width: 3px; }
+.reviews-scroll::-webkit-scrollbar-track { background: transparent; }
+.reviews-scroll::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.35); border-radius: 10px; }
+.reviews-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+.reviews-title {
+  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dark);
+}
+.see-more {
+  font-size: 0.58rem; letter-spacing: 0.1em; color: var(--gold);
+  text-decoration: none; transition: opacity 0.2s;
+}
+.see-more:hover { opacity: 0.7; }
+.review-item { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 0.5px solid rgba(201,168,76,0.1); }
+.review-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.review-top { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem; }
+.reviewer-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
   display: flex; align-items: center; justify-content: center;
-  border: 0.5px solid rgba(201,168,76,0.2);
-  cursor: pointer; transition: all 0.25s; color: var(--mid);
-  background: none; font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem; font-weight: 500; color: var(--white); flex-shrink: 0;
 }
-.page-num:hover { border-color: var(--gold); color: var(--gold-dark); }
-.page-num.active { background: var(--gold); border-color: var(--gold); color: var(--white); }
-.page-arrow {
-  font-size: 0.7rem; color: var(--gold);
-  cursor: pointer; padding: 0 0.5rem;
-  background: none; border: none; font-family: 'Montserrat', sans-serif;
-  transition: opacity 0.2s;
+.reviewer-name { font-size: 0.68rem; font-weight: 400; color: var(--dark); }
+.reviewer-date { font-size: 0.55rem; color: var(--mid); }
+.review-stars { color: var(--gold); font-size: 0.7rem; margin-bottom: 0.4rem; margin-left: 2.4rem; }
+.review-text {
+  font-size: 0.68rem; line-height: 1.7; color: var(--mid);
+  font-weight: 300; margin-left: 2.4rem;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
-.page-arrow:hover { opacity: 0.6; }
 </style>
 </head>
 <body>
@@ -276,262 +358,291 @@ nav {
   </ul>
 </nav>
 
-<!-- PAGE HEADER -->
-<div class="page-header">
-  <div class="page-header-inner">
-    <div>
-      <p class="page-title-eyebrow">ideca Designs</p>
-      <h1 class="page-title">The <em>Collection</em></h1>
-    </div>
-    <p class="item-count">Showing 10 of 48 pieces</p>
+<div class="page-wrap">
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="#">Home</a> › <a href="#">Collection</a> › <span>Ivory Reverie Gown</span>
   </div>
 
-  <!-- FILTER BAR -->
-  <div class="filter-bar">
-    <span class="filter-label">Filter</span>
-    <div class="filter-group">
-      <button class="filter-btn active" onclick="setFilter(this)">All</button>
-      <button class="filter-btn" onclick="setFilter(this)">Gowns</button>
-      <button class="filter-btn" onclick="setFilter(this)">Separates</button>
-      <button class="filter-btn" onclick="setFilter(this)">Accessories</button>
-      <button class="filter-btn" onclick="setFilter(this)">New Arrivals</button>
-      <button class="filter-btn" onclick="setFilter(this)">Sale</button>
-
+  <!-- IMAGE SHOWCASE -->
+  <div class="showcase">
+    <!-- Main large image -->
+    <div class="showcase-main">
+      <div class="img-placeholder">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="36" height="36" stroke="#9A7A30" stroke-width="0.75"/><circle cx="18" cy="18" r="4" stroke="#9A7A30" stroke-width="0.75"/><path d="M6 32l10-8 8 6 8-10 10 12" stroke="#9A7A30" stroke-width="0.75" stroke-linejoin="round"/></svg>
+        <span>Main Product Photo</span>
+      </div>
+      <div class="showcase-tag">Ready-to-Wear</div>
     </div>
-    <div class="sort-wrap">
-      <span class="sort-label">Sort</span>
-      <select class="sort-select">
-        <option>Featured</option>
-        <option>Price: Low to High</option>
-        <option>Price: High to Low</option>
-        <option>Newest First</option>
-        <option>Top Rated</option>
-      </select>
+
+    <!-- Collage: 2 on top, 1 wide on bottom -->
+    <div class="showcase-collage">
+      <div class="showcase-collage-img">
+        <div class="img-placeholder">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
+          <span>Photo 2</span>
+        </div>
+      </div>
+      <div class="showcase-collage-img">
+        <div class="img-placeholder">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
+          <span>Photo 3</span>
+        </div>
+      </div>
+      <div class="showcase-collage-img">
+        <div class="img-placeholder">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
+          <span>Photo 4 — Detail Shot</span>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- PRODUCT DETAILS -->
+  <div class="product-grid">
+
+    <!-- LEFT: All product info -->
+    <div class="product-left">
+
+      <!-- Name + Favorite -->
+      <div class="product-name-row">
+        <h1 class="product-name">Ivory Reverie Gown</h1>
+        <button class="fav-btn" onclick="this.classList.toggle('liked')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+
+      <!-- Rating -->
+      <div class="rating-row">
+        <span class="stars">★★★★★</span>
+        <span class="rating-score">4.8</span>
+        <span class="rating-count">(41 reviews)</span>
+        <span class="rating-new">· New Reviews</span>
+      </div>
+
+      <!-- Color + Size -->
+      <div class="options-row">
+        <div>
+          <p class="option-label">Color</p>
+          <div class="color-swatches">
+            <div class="swatch active" onclick="selectSwatch(this)">
+              <div class="swatch-circle" style="background:#FDFCF8; outline: 1px solid #d0c8a8;"></div>
+              <span class="swatch-name">Ivory</span>
+            </div>
+            <div class="swatch" onclick="selectSwatch(this)">
+              <div class="swatch-circle" style="background:#C9A84C;"></div>
+              <span class="swatch-name">Gold</span>
+            </div>
+            <div class="swatch" onclick="selectSwatch(this)">
+              <div class="swatch-circle" style="background:#1a1a18;"></div>
+              <span class="swatch-name">Noir</span>
+            </div>
+            <div class="swatch" onclick="selectSwatch(this)">
+              <div class="swatch-circle" style="background:#c8b8a8;"></div>
+              <span class="swatch-name">Blush</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="option-label">Size</p>
+          <div class="size-btns">
+            <button class="size-btn" onclick="selectSize(this)">XS</button>
+            <button class="size-btn active" onclick="selectSize(this)">S</button>
+            <button class="size-btn" onclick="selectSize(this)">M</button>
+            <button class="size-btn" onclick="selectSize(this)">L</button>
+            <button class="size-btn" onclick="selectSize(this)">XL</button>
+            <button class="size-btn" onclick="selectSize(this)">XXL</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="desc-section">
+        <div class="section-toggle" onclick="toggleSection('desc')">
+          <span class="section-title-sm">Description</span>
+          <span class="toggle-icon open" id="desc-icon">∧</span>
+        </div>
+        <div class="desc-body" id="desc-body">
+          The Ivory Reverie Gown is a timeless expression of femininity and grace. Crafted from a fluid, lightweight silk-blend fabric, this gown moves effortlessly with the body, creating a silhouette that is both bold and refined. A structured bodice with subtle boning ensures a flawless fit, while the sweeping A-line skirt offers dramatic movement with every step. Designed for the woman who commands every room she enters — this is more than a dress, it is a statement.
+        </div>
+      </div>
+
+      <!-- Shipping -->
+      <div>
+        <div class="section-toggle" onclick="toggleSection('ship')">
+          <span class="section-title-sm">Shipping & Delivery</span>
+          <span class="toggle-icon open" id="ship-icon">∧</span>
+        </div>
+        <div id="ship-body">
+          <div class="shipping-grid">
+            <div class="shipping-item">
+              <div class="shipping-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+              </div>
+              <div>
+                <p class="shipping-info-label">Standard Shipping</p>
+                <p class="shipping-info-val">Free on orders $150+</p>
+              </div>
+            </div>
+            <div class="shipping-item">
+              <div class="shipping-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+              <div>
+                <p class="shipping-info-label">Delivery Time</p>
+                <p class="shipping-info-val">5–10 Business Days</p>
+              </div>
+            </div>
+            <div class="shipping-item">
+              <div class="shipping-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M21 10H3M21 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/><path d="M12 3a15.3 15.3 0 0 1 4 7H8a15.3 15.3 0 0 1 4-7z"/></svg>
+              </div>
+              <div>
+                <p class="shipping-info-label">Packaging</p>
+                <p class="shipping-info-val">Luxury Gift Box</p>
+              </div>
+            </div>
+            <div class="shipping-item">
+              <div class="shipping-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M9 14l2 2 4-4"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              </div>
+              <div>
+                <p class="shipping-info-label">Est. Arrival</p>
+                <p class="shipping-info-val">Apr 15 – Apr 22</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end product-left -->
+
+    <!-- RIGHT: Price + Reviews -->
+    <div class="product-right">
+
+      <!-- Price + Buy Now -->
+      <div class="price-card">
+        <div class="price-left">
+          <p class="price-label">Price</p>
+          <p class="price-amount">$485.00</p>
+        </div>
+        <button class="buy-btn">
+          Add to Cart
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- Reviews -->
+      <div class="reviews-card">
+        <div class="reviews-header">
+          <span class="reviews-title">Reviews (41)</span>
+          <a href="#" class="see-more">See all</a>
+        </div>
+
+        <div class="reviews-scroll">
+        <div class="review-item">
+          <div class="review-top">
+            <div class="reviewer-avatar">AS</div>
+            <div>
+              <p class="reviewer-name">Alexandra S.</p>
+              <p class="reviewer-date">March 12, 2025</p>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Absolutely stunning gown. The fabric drapes beautifully and the fit was perfect. I wore this to a gala and received compliments all evening."</p>
+        </div>
+
+        <div class="review-item">
+          <div class="review-top">
+            <div class="reviewer-avatar" style="background: linear-gradient(135deg,#d4c99a,#9A7A30);">TW</div>
+            <div>
+              <p class="reviewer-name">Tiffany W.</p>
+              <p class="reviewer-date">February 28, 2025</p>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Exceptional quality. Shipping was fast and the packaging alone felt like a luxury experience. Will be ordering again."</p>
+        </div>
+
+        <div class="review-item">
+          <div class="review-top">
+            <div class="reviewer-avatar" style="background: linear-gradient(135deg,#c8b8a8,#8a7060);">JR</div>
+            <div>
+              <p class="reviewer-name">Jasmine R.</p>
+              <p class="reviewer-date">January 15, 2025</p>
+            </div>
+          </div>
+          <div class="review-stars">★★★★☆</div>
+          <p class="review-text">"Gorgeous dress, runs slightly small so size up. The ivory color is even more beautiful in person."</p>
+        </div>
+
+        <div class="review-item">
+          <div class="review-top">
+            <div class="reviewer-avatar" style="background: linear-gradient(135deg,#b8c8d8,#607080);">NM</div>
+            <div>
+              <p class="reviewer-name">Naomi M.</p>
+              <p class="reviewer-date">January 3, 2025</p>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Wore this to my sister's wedding and I felt like royalty. The silhouette is just perfection."</p>
+        </div>
+
+        <div class="review-item">
+          <div class="review-top">
+            <div class="reviewer-avatar" style="background: linear-gradient(135deg,#d8c8b8,#907060);">CL</div>
+            <div>
+              <p class="reviewer-name">Celeste L.</p>
+              <p class="reviewer-date">December 18, 2024</p>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"The attention to detail on this gown is unreal. You can tell it's crafted with true intention. ideca has a customer for life."</p>
+        </div>
+
+        <div class="review-item">
+          <div class="review-top">
+            <div class="reviewer-avatar" style="background: linear-gradient(135deg,#c8d8b8,#608050);">KP</div>
+            <div>
+              <p class="reviewer-name">Kayla P.</p>
+              <p class="reviewer-date">December 5, 2024</p>
+            </div>
+          </div>
+          <div class="review-stars">★★★★☆</div>
+          <p class="review-text">"Beautiful gown, delivery was a little delayed but the product more than made up for it. Packaging was absolutely gorgeous."</p>
+        </div>
+        </div><!-- end reviews-scroll -->
+
+      </div>
+    </div><!-- end product-right -->
+
+  </div><!-- end product-grid -->
 </div>
 
-<!-- PRODUCT GRID -->
-<div class="shop-grid-wrap">
-  <div class="shop-grid" id="productGrid">
-
-    <!-- Card 1 -->
-    <div class="product-card">
-      <div class="card-image-wrap">
-        <div class="card-img-placeholder">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/><path d="M10 10h12M10 16h8M10 22h10" stroke="#9A7A30" stroke-width="0.5" stroke-linecap="round"/></svg>
-          <span>Product Photo</span>
-        </div>
-        <div class="card-heart" onclick="toggleHeart(this)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <div class="card-rating"><span class="star">★</span><span class="rating-num">4.8</span></div>
-        <div class="card-hover-info">
-          <p class="card-item-name">Ivory Reverie Gown</p>
-          <p class="card-item-price">$485.00</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="product-card">
-      <div class="card-image-wrap">
-        <div class="card-img-placeholder">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
-          <span>Product Photo</span>
-        </div>
-        <div class="card-heart" onclick="toggleHeart(this)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <div class="card-rating"><span class="star">★</span><span class="rating-num">4.6</span></div>
-        <div class="card-hover-info">
-          <p class="card-item-name">Golden Hour Midi</p>
-          <p class="card-item-price">$320.00</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="product-card">
-      <div class="card-image-wrap">
-        <div class="card-img-placeholder">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
-          <span>Product Photo</span>
-        </div>
-        <div class="card-heart" onclick="toggleHeart(this)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <div class="card-rating"><span class="star">★</span><span class="rating-num">5.0</span></div>
-        <div class="card-hover-info">
-          <p class="card-item-name">Maison Blanc Set</p>
-          <p class="card-item-price">$560.00</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="product-card">
-      <div class="card-image-wrap">
-        <div class="card-img-placeholder">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
-          <span>Product Photo</span>
-        </div>
-        <div class="card-heart" onclick="toggleHeart(this)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <div class="card-rating"><span class="star">★</span><span class="rating-num">4.7</span></div>
-        <div class="card-hover-info">
-          <p class="card-item-name">Aria Statement Dress</p>
-          <p class="card-item-price">$395.00</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="product-card">
-      <div class="card-image-wrap">
-        <div class="card-img-placeholder">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
-          <span>Product Photo</span>
-        </div>
-        <div class="card-heart" onclick="toggleHeart(this)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <div class="card-rating"><span class="star">★</span><span class="rating-num">4.9</span></div>
-        <div class="card-hover-info">
-          <p class="card-item-name">Lumière Blouse</p>
-          <p class="card-item-price">$210.00</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 6 -->
-    <div class="product-card">
-      <div class="card-image-wrap">
-        <div class="card-img-placeholder">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
-          <span>Product Photo</span>
-        </div>
-        <div class="card-heart" onclick="toggleHeart(this)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <div class="card-rating"><span class="star">★</span><span class="rating-num">4.5</span></div>
-        <div class="card-hover-info">
-          <p class="card-item-name">Velvet Noir Gown</p>
-          <p class="card-item-price">$620.00</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 7 -->
-    <div class="product-card">
-      <div class="card-image-wrap">
-        <div class="card-img-placeholder">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
-          <span>Product Photo</span>
-        </div>
-        <div class="card-heart" onclick="toggleHeart(this)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <div class="card-rating"><span class="star">★</span><span class="rating-num">4.8</span></div>
-        <div class="card-hover-info">
-          <p class="card-item-name">Côte d'Azur Skirt</p>
-          <p class="card-item-price">$275.00</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 8 -->
-    <div class="product-card">
-      <div class="card-image-wrap">
-        <div class="card-img-placeholder">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
-          <span>Product Photo</span>
-        </div>
-        <div class="card-heart" onclick="toggleHeart(this)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <div class="card-rating"><span class="star">★</span><span class="rating-num">4.3</span></div>
-        <div class="card-hover-info">
-          <p class="card-item-name">Crème Silk Trouser</p>
-          <p class="card-item-price">$245.00</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 9 -->
-    <div class="product-card">
-      <div class="card-image-wrap">
-        <div class="card-img-placeholder">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
-          <span>Product Photo</span>
-        </div>
-        <div class="card-heart" onclick="toggleHeart(this)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <div class="card-rating"><span class="star">★</span><span class="rating-num">4.9</span></div>
-        <div class="card-hover-info">
-          <p class="card-item-name">Soleil Evening Cape</p>
-          <p class="card-item-price">$430.00</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 10 -->
-    <div class="product-card">
-      <div class="card-image-wrap">
-        <div class="card-img-placeholder">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
-          <span>Product Photo</span>
-        </div>
-        <div class="card-heart" onclick="toggleHeart(this)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <div class="card-rating"><span class="star">★</span><span class="rating-num">4.7</span></div>
-        <div class="card-hover-info">
-          <p class="card-item-name">Aureate Wrap Dress</p>
-          <p class="card-item-price">$355.00</p>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- end grid -->
-
-  <!-- PAGINATION -->
-  <div class="pagination">
-    <button class="page-arrow">←</button>
-    <button class="page-num active">1</button>
-    <button class="page-num">2</button>
-    <button class="page-num">3</button>
-    <button class="page-num">4</button>
-    <button class="page-num">5</button>
-    <button class="page-arrow">→</button>
-  </div>
-
-</div><!-- end wrap -->
-
 <script>
-function toggleHeart(el) {
-  el.classList.toggle('liked');
-  const svg = el.querySelector('svg');
-  if (el.classList.contains('liked')) {
-    svg.setAttribute('fill', '#e05a6e');
-    svg.setAttribute('stroke', '#e05a6e');
+function selectSwatch(el) {
+  el.closest('.color-swatches').querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+  el.classList.add('active');
+}
+function selectSize(el) {
+  el.closest('.size-btns').querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+}
+function toggleSection(id) {
+  const body = document.getElementById(id + '-body');
+  const icon = document.getElementById(id + '-icon');
+  const isOpen = icon.classList.contains('open');
+  if (isOpen) {
+    body.style.display = 'none';
+    icon.classList.remove('open');
+    icon.textContent = '∨';
   } else {
-    svg.setAttribute('fill', 'none');
-    svg.setAttribute('stroke', '#9A7A30');
+    body.style.display = '';
+    icon.classList.add('open');
+    icon.textContent = '∧';
   }
 }
-function setFilter(btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-}
-document.querySelectorAll('.page-num').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.page-num').forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-  });
-});
 </script>
 </body>
 </html>
