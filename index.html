@@ -10,7 +10,230 @@
 .page { display: none !important; }
 .page.active { display: block !important; }
 
+
+/* ── HOME BACK BUTTON ── */
+.home-back-btn {
+  display: none;
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.58rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--white);
+  background: linear-gradient(120deg, var(--gold-dark), var(--gold));
+  border: none; border-radius: 50px;
+  padding: 0.75rem 1.4rem;
+  cursor: pointer; transition: opacity 0.3s;
+  align-items: center; gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+}
+.home-back-btn:hover { opacity: 0.85; }
+.home-back-btn.visible { display: flex; }
+
 /* ── HOME STYLES ── */
+
+/* ── SHARED EXTRA PAGE STYLES ── */
+.xp-wrap { min-height: 100vh; padding-top: 72px; }
+.xp-hero {
+  padding: 5rem 3.5rem 3.5rem;
+  text-align: center; display: flex; flex-direction: column; align-items: center;
+}
+.xp-eyebrow {
+  font-size: 0.58rem; font-weight: 300; letter-spacing: 0.45em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+}
+.xp-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 7vw, 6rem); font-weight: 200; line-height: 0.95;
+  letter-spacing: 0.05em; color: #1a1a18; margin-bottom: 1.5rem;
+}
+.xp-title em { font-style: italic; color: var(--gold-dark); }
+.xp-divider { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+.xdl { width: 60px; height: 0.5px; background: linear-gradient(to right, transparent, var(--gold)); }
+.xdr { width: 60px; height: 0.5px; background: linear-gradient(to left, transparent, var(--gold)); }
+.xdd { width: 5px; height: 5px; background: var(--gold); transform: rotate(45deg); }
+.xp-sub { font-size: 0.78rem; color: var(--mid); letter-spacing: 0.08em; font-weight: 300; }
+.xp-content { padding: 3rem 3.5rem 5rem; max-width: 1300px; margin: 0 auto; }
+.xp-btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.62rem; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--white); background: linear-gradient(120deg, var(--gold-dark), var(--gold), var(--gold-light));
+  border: none; border-radius: 50px; padding: 0.9rem 2rem;
+  cursor: pointer; transition: opacity 0.3s;
+}
+.xp-btn:hover { opacity: 0.85; }
+
+/* CUSTOM DESIGN */
+.cd-steps { display: flex; flex-direction: column; gap: 0; margin-bottom: 3rem; }
+.cd-step {
+  display: flex; gap: 2rem; align-items: flex-start;
+  padding: 2rem; border-left: 0.5px solid rgba(201,168,76,0.2);
+  position: relative; margin-left: 2rem;
+}
+.cd-step::before {
+  content: ''; position: absolute; left: -4px; top: 2.4rem;
+  width: 7px; height: 7px; background: var(--gold);
+  border-radius: 50%; border: 2px solid var(--white);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+.cd-step-num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem; font-weight: 200; color: rgba(201,168,76,0.18);
+  line-height: 1; flex-shrink: 0; width: 60px;
+}
+.cd-step-title { font-size: 0.9rem; font-weight: 400; color: var(--dark); margin-bottom: 0.5rem; letter-spacing: 0.05em; }
+.cd-step-desc { font-size: 0.78rem; line-height: 1.85; color: var(--mid); font-weight: 300; }
+.cd-cta-card {
+  background: var(--dark); border-radius: 20px; padding: 3rem;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;
+}
+.cd-cta-eyebrow { font-size: 0.55rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); }
+.cd-cta-title { font-family: "Cormorant Garamond", serif; font-size: 2.2rem; font-weight: 200; color: var(--white); line-height: 1.1; }
+.cd-cta-title em { font-style: italic; color: var(--gold-light); }
+.cd-cta-body { font-size: 0.78rem; color: rgba(253,252,248,0.45); font-weight: 300; line-height: 1.8; }
+
+/* ABOUT */
+.about-split-pg {
+  display: grid; grid-template-columns: 1fr 1.6fr; gap: 3rem;
+  margin-bottom: 4rem; align-items: center;
+}
+.about-img-pg {
+  aspect-ratio: 3/4; border-radius: 20px;
+  background: linear-gradient(160deg,#ede8d8,#d4c99a);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 1rem; position: relative;
+}
+.about-img-pg::before {
+  content: ''; position: absolute; inset: 1.5rem;
+  border: 0.5px dashed rgba(201,168,76,0.3); border-radius: 14px;
+}
+.about-img-placeholder-pg { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; opacity: 0.35; }
+.about-img-placeholder-pg svg { }
+.about-img-placeholder-pg span { font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dark); }
+.about-name-pg { font-family: "Cormorant Garamond", serif; font-size: 2.8rem; font-weight: 200; color: var(--dark); margin-bottom: 1.5rem; line-height: 1.05; }
+.about-name-pg em { font-style: italic; color: var(--gold-dark); }
+.about-body-pg { font-size: 0.82rem; line-height: 1.9; color: var(--mid); font-weight: 300; margin-bottom: 1rem; }
+.about-sig-pg { font-family: "Cormorant Garamond", serif; font-size: 1.2rem; font-style: italic; font-weight: 300; color: var(--gold-dark); margin-top: 1rem; }
+.about-values { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.about-value-card {
+  background: var(--white); border-radius: 20px; padding: 2rem 1.8rem;
+  border: 0.5px solid rgba(201,168,76,0.15);
+}
+.about-val-icon { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; }
+.about-val-title { font-family: "Cormorant Garamond", serif; font-size: 1.4rem; font-weight: 300; color: var(--dark); margin-bottom: 0.75rem; }
+.about-val-desc { font-size: 0.75rem; line-height: 1.85; color: var(--mid); font-weight: 300; }
+
+/* PORTFOLIO */
+.port-filter-row { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.port-filter {
+  font-family: "Montserrat", sans-serif; font-size: 0.58rem; font-weight: 300;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid);
+  background: rgba(253,252,248,0.7); border: 0.5px solid rgba(201,168,76,0.25);
+  border-radius: 50px; padding: 0.5rem 1.2rem; cursor: pointer; transition: all 0.25s;
+}
+.port-filter:hover { color: var(--gold-dark); border-color: var(--gold); }
+.port-filter.active { color: var(--white); background: linear-gradient(120deg,var(--gold-dark),var(--gold)); border-color: transparent; }
+.port-masonry {
+  columns: 4; gap: 1rem; column-fill: balance;
+}
+.port-tile { break-inside: avoid; margin-bottom: 1rem; border-radius: 16px; overflow: hidden; cursor: pointer; }
+.port-tile-inner {
+  width: 100%; display: flex; align-items: flex-end; padding: 1rem;
+  background: linear-gradient(160deg,#ede8d8,#d4c99a);
+  transition: transform 0.4s;
+}
+.port-tile:hover .port-tile-inner { transform: scale(1.02); }
+.port-tall .port-tile-inner { height: 380px; }
+.port-med .port-tile-inner { height: 260px; }
+.port-short .port-tile-inner { height: 180px; }
+.port-tile:nth-child(2) .port-tile-inner { background: linear-gradient(160deg,#e4dcc8,#cfc299); }
+.port-tile:nth-child(3) .port-tile-inner { background: linear-gradient(160deg,#f0ebdc,#ddd4b2); }
+.port-tile:nth-child(4) .port-tile-inner { background: linear-gradient(160deg,#e8e0cc,#d0c494); }
+.port-tile:nth-child(5) .port-tile-inner { background: linear-gradient(160deg,#ece5d0,#d9cf9e); }
+.port-tile:nth-child(6) .port-tile-inner { background: linear-gradient(160deg,#e0d8c2,#cbc28e); }
+.port-tile:nth-child(7) .port-tile-inner { background: linear-gradient(160deg,#eae2cc,#d5cb98); }
+.port-tile:nth-child(8) .port-tile-inner { background: linear-gradient(160deg,#f2ede0,#e0d8b5); }
+.port-tile-inner span { font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(26,26,24,0.45); }
+
+/* BOOKING */
+.booking-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.5rem; align-items: start; }
+.booking-form-card { background: var(--white); border-radius: 20px; padding: 2rem 2.2rem; border: 0.5px solid rgba(201,168,76,0.12); }
+.booking-section-label { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; display: block; }
+.booking-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.booking-field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+.booking-label { font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); }
+.booking-input {
+  font-family: "Montserrat", sans-serif; font-size: 0.78rem; font-weight: 300;
+  color: var(--dark); background: var(--off-white);
+  border: 0.5px solid rgba(201,168,76,0.2); border-radius: 10px;
+  padding: 0.75rem 1rem; outline: none; transition: border-color 0.25s;
+  width: 100%;
+}
+.booking-input:focus { border-color: var(--gold); }
+.booking-textarea { resize: vertical; min-height: 100px; }
+.booking-types { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.booking-type {
+  padding: 1rem; border-radius: 12px; cursor: pointer;
+  border: 0.5px solid rgba(201,168,76,0.2);
+  background: var(--off-white); transition: all 0.25s;
+}
+.booking-type:hover { border-color: var(--gold); }
+.booking-type.active { background: linear-gradient(120deg,var(--gold-dark),var(--gold)); border-color: transparent; }
+.booking-type.active .bt-title, .booking-type.active .bt-desc { color: var(--white) !important; }
+.bt-title { font-size: 0.72rem; font-weight: 400; color: var(--dark); margin-bottom: 0.2rem; }
+.bt-desc { font-size: 0.6rem; color: var(--mid); font-weight: 300; }
+.booking-info-col { display: flex; flex-direction: column; gap: 1rem; }
+.booking-info-card { background: var(--white); border-radius: 16px; padding: 1.5rem; border: 0.5px solid rgba(201,168,76,0.12); }
+.booking-info-row { display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 300; color: var(--mid); padding: 0.5rem 0; border-bottom: 0.5px solid rgba(201,168,76,0.08); }
+.booking-info-row:last-child { border-bottom: none; }
+
+/* TESTIMONIALS */
+.test-summary {
+  display: flex; align-items: center; justify-content: center; gap: 3rem;
+  background: var(--white); border-radius: 20px; padding: 2rem;
+  border: 0.5px solid rgba(201,168,76,0.12); margin-bottom: 2.5rem;
+}
+.test-stat { text-align: center; }
+.test-stat-num { font-family: "Cormorant Garamond", serif; font-size: 2.5rem; font-weight: 200; color: var(--dark); }
+.test-stat-stars { color: var(--gold); font-size: 0.85rem; margin: 0.2rem 0; }
+.test-stat-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
+.test-stat-div { width: 0.5px; height: 50px; background: rgba(201,168,76,0.2); }
+.test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.test-card {
+  background: var(--white); border-radius: 20px; padding: 2rem;
+  border: 0.5px solid rgba(201,168,76,0.12);
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.test-featured { grid-column: 1 / -1; background: var(--dark); border-color: transparent; }
+.test-featured .test-quote-mark { color: var(--gold); }
+.test-featured .test-quote { color: rgba(253,252,248,0.7); }
+.test-featured .test-name { color: var(--white); }
+.test-featured .test-role { color: rgba(253,252,248,0.4); }
+.test-quote-mark { font-family: "Cormorant Garamond", serif; font-size: 4rem; font-weight: 200; color: rgba(201,168,76,0.25); line-height: 0.5; }
+.test-quote { font-size: 0.82rem; line-height: 1.85; color: var(--mid); font-weight: 300; font-style: italic; flex: 1; }
+.test-author-row { display: flex; align-items: center; gap: 0.75rem; margin-top: auto; }
+.test-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.62rem; font-weight: 500; color: var(--white); flex-shrink: 0; background: linear-gradient(135deg,var(--gold-light),var(--gold)); }
+.test-name { font-size: 0.72rem; font-weight: 400; color: var(--dark); }
+.test-role { font-size: 0.58rem; color: var(--mid); }
+.test-stars { margin-left: auto; color: var(--gold); font-size: 0.75rem; }
+
+/* CONTACT */
+.contact-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.5rem; align-items: start; }
+.contact-form-card { background: var(--white); border-radius: 20px; padding: 2rem 2.2rem; border: 0.5px solid rgba(201,168,76,0.12); }
+.contact-info-col { display: flex; flex-direction: column; gap: 1rem; }
+.contact-info-card { background: var(--white); border-radius: 16px; padding: 1.5rem 1.8rem; border: 0.5px solid rgba(201,168,76,0.12); text-align: center; }
+.contact-info-icon { font-size: 1.3rem; color: var(--gold); margin-bottom: 0.5rem; }
+.contact-info-label { font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.3rem; }
+.contact-info-val { font-size: 0.8rem; font-weight: 300; color: var(--dark); }
+.contact-social-card { background: var(--white); border-radius: 16px; padding: 1.5rem 1.8rem; border: 0.5px solid rgba(201,168,76,0.12); }
+.contact-socials { display: flex; gap: 0.6rem; margin-top: 0.5rem; flex-wrap: wrap; }
+.contact-social-btn {
+  font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--mid); border: 0.5px solid rgba(201,168,76,0.25);
+  border-radius: 50px; padding: 0.5rem 1.1rem; text-decoration: none;
+  transition: all 0.25s; font-family: "Montserrat", sans-serif;
+}
+.contact-social-btn:hover { color: var(--gold-dark); border-color: var(--gold); }
+
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -276,8 +499,8 @@ nav {
 .shop-grid-wrap { padding: 3rem 3.5rem 5rem; }
 .shop-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 }
 
 /* ── PRODUCT CARD ── */
@@ -289,7 +512,7 @@ nav {
 
 .card-image-wrap {
   position: relative; overflow: hidden;
-  aspect-ratio: 2/3;
+  aspect-ratio: 3/4;
   background: #FFFFFF;
   border-radius: 16px;
   box-shadow: 0 2px 16px rgba(201,168,76,0.1);
@@ -391,6 +614,7 @@ nav {
   width: 36px; height: 36px;
   display: flex; align-items: center; justify-content: center;
   border: 0.5px solid rgba(201,168,76,0.2);
+  border-radius: 50px;
   cursor: pointer; transition: all 0.25s; color: var(--mid);
   background: none; font-family: 'Montserrat', sans-serif;
 }
@@ -831,7 +1055,7 @@ nav {
       <p class="page-title-eyebrow">ideca Designs</p>
       <h1 class="page-title">The <em>Collection</em></h1>
     </div>
-    <p class="item-count">Showing 10 of 48 pieces</p>
+    <p class="item-count">Showing 16 of 48 pieces</p>
   </div>
 
   <!-- FILTER BAR -->
@@ -1039,6 +1263,114 @@ nav {
         <div class="card-hover-info">
           <p class="card-item-name">Aureate Wrap Dress</p>
           <p class="card-item-price">$355.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 11 -->
+    <div class="product-card">
+      <div class="card-image-wrap">
+        <div class="card-img-placeholder">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
+          <span>Product Photo</span>
+        </div>
+        <div class="card-heart" onclick="toggleHeart(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="card-rating"><span class="star">★</span><span class="rating-num">4.6</span></div>
+        <div class="card-hover-info">
+          <p class="card-item-name">Satin Pearl Gown</p>
+          <p class="card-item-price">$520.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 12 -->
+    <div class="product-card">
+      <div class="card-image-wrap">
+        <div class="card-img-placeholder">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
+          <span>Product Photo</span>
+        </div>
+        <div class="card-heart" onclick="toggleHeart(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="card-rating"><span class="star">★</span><span class="rating-num">4.9</span></div>
+        <div class="card-hover-info">
+          <p class="card-item-name">Dusk Chiffon Dress</p>
+          <p class="card-item-price">$415.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 13 -->
+    <div class="product-card">
+      <div class="card-image-wrap">
+        <div class="card-img-placeholder">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
+          <span>Product Photo</span>
+        </div>
+        <div class="card-heart" onclick="toggleHeart(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="card-rating"><span class="star">★</span><span class="rating-num">4.8</span></div>
+        <div class="card-hover-info">
+          <p class="card-item-name">Opulence Midi Skirt</p>
+          <p class="card-item-price">$295.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 14 -->
+    <div class="product-card">
+      <div class="card-image-wrap">
+        <div class="card-img-placeholder">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
+          <span>Product Photo</span>
+        </div>
+        <div class="card-heart" onclick="toggleHeart(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="card-rating"><span class="star">★</span><span class="rating-num">5.0</span></div>
+        <div class="card-hover-info">
+          <p class="card-item-name">Noir Velvet Blazer</p>
+          <p class="card-item-price">$380.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 15 -->
+    <div class="product-card">
+      <div class="card-image-wrap">
+        <div class="card-img-placeholder">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
+          <span>Product Photo</span>
+        </div>
+        <div class="card-heart" onclick="toggleHeart(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="card-rating"><span class="star">★</span><span class="rating-num">4.7</span></div>
+        <div class="card-hover-info">
+          <p class="card-item-name">Gilded Lace Top</p>
+          <p class="card-item-price">$185.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 16 -->
+    <div class="product-card">
+      <div class="card-image-wrap">
+        <div class="card-img-placeholder">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" stroke="#9A7A30" stroke-width="0.75"/></svg>
+          <span>Product Photo</span>
+        </div>
+        <div class="card-heart" onclick="toggleHeart(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9A7A30" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="card-rating"><span class="star">★</span><span class="rating-num">4.5</span></div>
+        <div class="card-hover-info">
+          <p class="card-item-name">Empress Silk Set</p>
+          <p class="card-item-price">$540.00</p>
         </div>
       </div>
     </div>
@@ -1409,6 +1741,14 @@ function navigateTo(pageId) {
 
 // Wire up shop button on home page
 document.addEventListener('click', function(e) {
+  // Logo goes home
+  const logo = e.target.closest('.nav-logo');
+  if (logo) {
+    e.preventDefault();
+    navigateTo('home');
+    return;
+  }
+
   const shopBtn = e.target.closest('.hero-shop-btn');
   if (shopBtn) {
     e.preventDefault();
@@ -1434,12 +1774,32 @@ document.addEventListener('click', function(e) {
     if (text === 'home') { e.preventDefault(); navigateTo('home'); }
   }
 
-  // Nav links — Collection goes to shop
+  // Nav links routing
   if (e.target.tagName === 'A') {
     const text = e.target.textContent.trim().toLowerCase();
-    if (text === 'collection') { e.preventDefault(); navigateTo('shop'); }
+    const navMap = {
+      'collection': 'shop',
+      'custom design': 'custom',
+      'about': 'about',
+      'portfolio': 'portfolio',
+      'booking': 'booking',
+      'testimonials': 'testimonials',
+      'contact': 'contact',
+    };
+    if (navMap[text]) { e.preventDefault(); navigateTo(navMap[text]); }
   }
 });
+
+// Portfolio filter
+function setPortFilter(btn) {
+  document.querySelectorAll('.port-filter').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+// Booking type selector
+function selectBookingType(el) {
+  document.querySelectorAll('.booking-type').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+}
 
 // Shop page scripts
 
@@ -1492,5 +1852,344 @@ function toggleSection(id) {
 }
 
 </script>
-</body>
-</html>
+
+<!-- CUSTOM DESIGN PAGE -->
+<div class="page" id="page-custom">
+  <div class="xp-wrap">
+    <div class="xp-hero" style="background: linear-gradient(160deg,#FDFCF8 0%,#F7F2E4 50%,#EFE5C4 100%);">
+      <p class="xp-eyebrow">Bespoke Creations</p>
+      <h1 class="xp-title">Custom <em>Design</em></h1>
+      <div class="xp-divider"><div class="xdl"></div><div class="xdd"></div><div class="xdr"></div></div>
+      <p class="xp-sub">From concept to couture — your vision, crafted by Miranda.</p>
+    </div>
+    <div class="xp-content">
+      <div class="cd-steps">
+        <div class="cd-step">
+          <div class="cd-step-num">01</div>
+          <div class="cd-step-body">
+            <h3 class="cd-step-title">Consultation</h3>
+            <p class="cd-step-desc">Book a one-on-one session with Miranda to discuss your vision, occasion, measurements, and preferred fabrics. Every design begins with a conversation.</p>
+          </div>
+        </div>
+        <div class="cd-step">
+          <div class="cd-step-num">02</div>
+          <div class="cd-step-body">
+            <h3 class="cd-step-title">Design & Sketch</h3>
+            <p class="cd-step-desc">Miranda translates your ideas into detailed sketches and fabric swatches for your approval before a single stitch is made.</p>
+          </div>
+        </div>
+        <div class="cd-step">
+          <div class="cd-step-num">03</div>
+          <div class="cd-step-body">
+            <h3 class="cd-step-title">Creation</h3>
+            <p class="cd-step-desc">Your garment is handcrafted with meticulous attention to detail. Each piece is constructed to your exact measurements and specifications.</p>
+          </div>
+        </div>
+        <div class="cd-step">
+          <div class="cd-step-num">04</div>
+          <div class="cd-step-body">
+            <h3 class="cd-step-title">Final Fitting</h3>
+            <p class="cd-step-desc">A final fitting ensures a perfect fit before your piece is finished, packaged, and delivered in our signature luxury gift box.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cd-cta-card">
+        <p class="cd-cta-eyebrow">Ready to begin?</p>
+        <h2 class="cd-cta-title">Let's Create Something <em>Unforgettable</em></h2>
+        <p class="cd-cta-body">Custom designs start at $650. Turnaround time is 4–8 weeks depending on complexity.</p>
+        <button class="xp-btn" onclick="navigateTo('booking')">Book a Consultation <span>→</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT PAGE -->
+<div class="page" id="page-about">
+  <div class="xp-wrap">
+    <div class="xp-hero" style="background: linear-gradient(160deg,#FDFCF8 0%,#F7F2E4 50%,#EFE5C4 100%);">
+      <p class="xp-eyebrow">Our Story</p>
+      <h1 class="xp-title">About <em>ideca</em></h1>
+      <div class="xp-divider"><div class="xdl"></div><div class="xdd"></div><div class="xdr"></div></div>
+    </div>
+    <div class="xp-content">
+      <div class="about-split-pg">
+        <div class="about-img-pg">
+          <div class="about-img-placeholder-pg">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="20" r="10" stroke="#9A7A30" stroke-width="0.75"/><path d="M8 48c0-11 9-20 20-20s20 9 20 20" stroke="#9A7A30" stroke-width="0.75"/></svg>
+            <span>Miranda Ughulu</span>
+          </div>
+        </div>
+        <div class="about-text-pg">
+          <p class="xp-eyebrow" style="text-align:left;">The Designer</p>
+          <h2 class="about-name-pg">Miranda <em>Ughulu</em></h2>
+          <p class="about-body-pg">ideca Designs Inc. was born from a lifelong devotion to the art of fashion. Founded by Miranda Ughulu, ideca is a fashion design and clothing establishment that exists at the intersection of elegance and boldness — where every piece tells a story.</p>
+          <p class="about-body-pg">Inspired by the timeless sophistication of Badgley Mischka, the refined modernity of Michael Kors, and the dramatic romance of Valentino, Miranda has carved a distinct identity in the world of fashion — one that speaks directly to the woman who is unapologetically herself.</p>
+          <p class="about-body-pg">Every collection — from ready-to-wear to fully custom designs — is created with an unwavering commitment to craftsmanship, quality, and the belief that every woman deserves to feel extraordinary.</p>
+          <div class="about-sig-pg">— Miranda Ughulu, Founder & Creative Director</div>
+        </div>
+      </div>
+      <div class="about-values">
+        <div class="about-value-card">
+          <div class="about-val-icon">✦</div>
+          <h3 class="about-val-title">Craftsmanship</h3>
+          <p class="about-val-desc">Every stitch is intentional. Every fabric chosen with care. We believe quality is non-negotiable.</p>
+        </div>
+        <div class="about-value-card">
+          <div class="about-val-icon">✦</div>
+          <h3 class="about-val-title">Individuality</h3>
+          <p class="about-val-desc">Fashion should feel personal. We design for women who know exactly who they are — and who they're becoming.</p>
+        </div>
+        <div class="about-value-card">
+          <div class="about-val-icon">✦</div>
+          <h3 class="about-val-title">Elegance</h3>
+          <p class="about-val-desc">Timeless over trendy. We create pieces that outlast seasons and earn a permanent place in your wardrobe.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PORTFOLIO PAGE -->
+<div class="page" id="page-portfolio">
+  <div class="xp-wrap">
+    <div class="xp-hero" style="background: linear-gradient(160deg,#FDFCF8 0%,#F7F2E4 50%,#EFE5C4 100%);">
+      <p class="xp-eyebrow">Our Work</p>
+      <h1 class="xp-title">The <em>Portfolio</em></h1>
+      <div class="xp-divider"><div class="xdl"></div><div class="xdd"></div><div class="xdr"></div></div>
+      <p class="xp-sub">A curated look at custom designs, editorial pieces, and unforgettable moments.</p>
+    </div>
+    <div class="xp-content">
+      <div class="port-filter-row">
+        <button class="port-filter active" onclick="setPortFilter(this)">All</button>
+        <button class="port-filter" onclick="setPortFilter(this)">Custom</button>
+        <button class="port-filter" onclick="setPortFilter(this)">Ready-to-Wear</button>
+        <button class="port-filter" onclick="setPortFilter(this)">Editorial</button>
+        <button class="port-filter" onclick="setPortFilter(this)">Bridal</button>
+      </div>
+      <div class="port-masonry">
+        <div class="port-tile port-tall"><div class="port-tile-inner"><span>Custom Gown — Client A</span></div></div>
+        <div class="port-tile port-short"><div class="port-tile-inner"><span>Ready-to-Wear — Spring</span></div></div>
+        <div class="port-tile port-short"><div class="port-tile-inner"><span>Editorial — Gold Series</span></div></div>
+        <div class="port-tile port-med"><div class="port-tile-inner"><span>Bridal — White Chapel</span></div></div>
+        <div class="port-tile port-med"><div class="port-tile-inner"><span>Custom — Evening Gown</span></div></div>
+        <div class="port-tile port-tall"><div class="port-tile-inner"><span>Editorial — Noir</span></div></div>
+        <div class="port-tile port-short"><div class="port-tile-inner"><span>Ready-to-Wear — Midi</span></div></div>
+        <div class="port-tile port-med"><div class="port-tile-inner"><span>Custom — Bridal Cape</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOKING PAGE -->
+<div class="page" id="page-booking">
+  <div class="xp-wrap">
+    <div class="xp-hero" style="background: linear-gradient(160deg,#FDFCF8 0%,#F7F2E4 50%,#EFE5C4 100%);">
+      <p class="xp-eyebrow">Schedule a Visit</p>
+      <h1 class="xp-title">Book a <em>Session</em></h1>
+      <div class="xp-divider"><div class="xdl"></div><div class="xdd"></div><div class="xdr"></div></div>
+      <p class="xp-sub">Reserve your consultation, fitting, or styling session with Miranda.</p>
+    </div>
+    <div class="xp-content">
+      <div class="booking-grid">
+        <div class="booking-form-card">
+          <p class="booking-section-label">Your Details</p>
+          <div class="booking-field-row">
+            <div class="booking-field">
+              <label class="booking-label">First Name</label>
+              <input class="booking-input" type="text" placeholder="e.g. Amara"/>
+            </div>
+            <div class="booking-field">
+              <label class="booking-label">Last Name</label>
+              <input class="booking-input" type="text" placeholder="e.g. Johnson"/>
+            </div>
+          </div>
+          <div class="booking-field">
+            <label class="booking-label">Email Address</label>
+            <input class="booking-input" type="email" placeholder="your@email.com"/>
+          </div>
+          <div class="booking-field">
+            <label class="booking-label">Phone Number</label>
+            <input class="booking-input" type="tel" placeholder="+1 (000) 000-0000"/>
+          </div>
+          <p class="booking-section-label" style="margin-top:1.5rem;">Session Type</p>
+          <div class="booking-types">
+            <div class="booking-type active" onclick="selectBookingType(this)">
+              <div class="bt-title">Consultation</div>
+              <div class="bt-desc">60 min · Free</div>
+            </div>
+            <div class="booking-type" onclick="selectBookingType(this)">
+              <div class="bt-title">Custom Design</div>
+              <div class="bt-desc">90 min · $75 deposit</div>
+            </div>
+            <div class="booking-type" onclick="selectBookingType(this)">
+              <div class="bt-title">Fitting</div>
+              <div class="bt-desc">45 min · Complimentary</div>
+            </div>
+            <div class="booking-type" onclick="selectBookingType(this)">
+              <div class="bt-title">Styling</div>
+              <div class="bt-desc">90 min · $120</div>
+            </div>
+          </div>
+          <div class="booking-field" style="margin-top:1.5rem;">
+            <label class="booking-label">Additional Notes</label>
+            <textarea class="booking-input booking-textarea" placeholder="Tell us about your vision, occasion, or any special requests..."></textarea>
+          </div>
+          <button class="xp-btn" style="width:100%; justify-content:center; margin-top:1.5rem;">Request Booking <span>→</span></button>
+        </div>
+        <div class="booking-info-col">
+          <div class="booking-info-card">
+            <p class="booking-section-label">Studio Hours</p>
+            <div class="booking-info-row"><span>Monday – Friday</span><span>10am – 6pm</span></div>
+            <div class="booking-info-row"><span>Saturday</span><span>11am – 4pm</span></div>
+            <div class="booking-info-row"><span>Sunday</span><span>By appointment</span></div>
+          </div>
+          <div class="booking-info-card">
+            <p class="booking-section-label">Contact</p>
+            <div class="booking-info-row"><span>Email</span><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="660203150f0108031426150e09160f020305074805090b">[email&#160;protected]</a></span></div>
+            <div class="booking-info-row"><span>Phone</span><span>609.678.8362</span></div>
+          </div>
+          <div class="booking-info-card" style="background:var(--dark); border-color:transparent;">
+            <p class="booking-section-label" style="color:rgba(253,252,248,0.45);">What to Expect</p>
+            <p style="font-size:0.75rem; line-height:1.8; color:rgba(253,252,248,0.55); font-weight:300;">Sessions are held at our private studio. Please arrive 5 minutes early. If you need to reschedule, kindly give 24 hours notice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS PAGE -->
+<div class="page" id="page-testimonials">
+  <div class="xp-wrap">
+    <div class="xp-hero" style="background: linear-gradient(160deg,#FDFCF8 0%,#F7F2E4 50%,#EFE5C4 100%);">
+      <p class="xp-eyebrow">Client Love</p>
+      <h1 class="xp-title">Testi<em>monials</em></h1>
+      <div class="xp-divider"><div class="xdl"></div><div class="xdd"></div><div class="xdr"></div></div>
+      <p class="xp-sub">Words from the women who wear ideca.</p>
+    </div>
+    <div class="xp-content">
+      <div class="test-summary">
+        <div class="test-stat"><div class="test-stat-num">4.9</div><div class="test-stat-stars">★★★★★</div><div class="test-stat-label">Average Rating</div></div>
+        <div class="test-stat-div"></div>
+        <div class="test-stat"><div class="test-stat-num">200+</div><div class="test-stat-label">Happy Clients</div></div>
+        <div class="test-stat-div"></div>
+        <div class="test-stat"><div class="test-stat-num">98%</div><div class="test-stat-label">Would Recommend</div></div>
+      </div>
+      <div class="test-grid">
+        <div class="test-card test-featured">
+          <div class="test-quote-mark">"</div>
+          <p class="test-quote">I wore my custom ideca gown to the Governor's Gala and was stopped no less than twelve times. Miranda is a genius. The way she understood my vision and translated it into something even more beautiful than I imagined — I will never go anywhere else.</p>
+          <div class="test-author-row">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#E8D5A0,#C9A84C);">DR</div>
+            <div><p class="test-name">Diana R.</p><p class="test-role">Custom Client · Gala Gown</p></div>
+            <div class="test-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="test-quote-mark">"</div>
+          <p class="test-quote">The Ivory Reverie Gown is everything. Packaging felt like unwrapping a gift from Paris. I'm obsessed.</p>
+          <div class="test-author-row">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#d4c99a,#9A7A30);">AS</div>
+            <div><p class="test-name">Alexandra S.</p><p class="test-role">Ready-to-Wear</p></div>
+            <div class="test-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="test-quote-mark">"</div>
+          <p class="test-quote">Miranda made my bridal look a dream. She listened to every detail and delivered perfection on the most important day of my life.</p>
+          <div class="test-author-row">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#c8d8e8,#607898);">NW</div>
+            <div><p class="test-name">Nicole W.</p><p class="test-role">Custom Bridal</p></div>
+            <div class="test-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="test-quote-mark">"</div>
+          <p class="test-quote">Exceptional quality. The fit, the fabric, the finish — all immaculate. This is what luxury fashion should feel like.</p>
+          <div class="test-author-row">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#d8c8b8,#907060);">CL</div>
+            <div><p class="test-name">Celeste L.</p><p class="test-role">Ready-to-Wear</p></div>
+            <div class="test-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="test-quote-mark">"</div>
+          <p class="test-quote">I've ordered three pieces now and each one has been better than the last. ideca is my secret weapon for every event.</p>
+          <div class="test-author-row">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#c8b8d8,#806090);">JP</div>
+            <div><p class="test-name">Janelle P.</p><p class="test-role">Repeat Client</p></div>
+            <div class="test-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="test-quote-mark">"</div>
+          <p class="test-quote">From booking to delivery, the entire experience felt elevated and personal. Miranda truly cares about her clients.</p>
+          <div class="test-author-row">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#b8d8c8,#507860);">TM</div>
+            <div><p class="test-name">Tara M.</p><p class="test-role">Custom Design</p></div>
+            <div class="test-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT PAGE -->
+<div class="page" id="page-contact">
+  <div class="xp-wrap">
+    <div class="xp-hero" style="background: linear-gradient(160deg,#FDFCF8 0%,#F7F2E4 50%,#EFE5C4 100%);">
+      <p class="xp-eyebrow">Get in Touch</p>
+      <h1 class="xp-title">Contact <em>Us</em></h1>
+      <div class="xp-divider"><div class="xdl"></div><div class="xdd"></div><div class="xdr"></div></div>
+      <p class="xp-sub">We'd love to hear from you. Reach out for any inquiries, collaborations, or just to say hello.</p>
+    </div>
+    <div class="xp-content">
+      <div class="contact-grid">
+        <div class="contact-form-card">
+          <p class="booking-section-label">Send a Message</p>
+          <div class="booking-field-row">
+            <div class="booking-field">
+              <label class="booking-label">First Name</label>
+              <input class="booking-input" type="text" placeholder="Your first name"/>
+            </div>
+            <div class="booking-field">
+              <label class="booking-label">Last Name</label>
+              <input class="booking-input" type="text" placeholder="Your last name"/>
+            </div>
+          </div>
+          <div class="booking-field">
+            <label class="booking-label">Email Address</label>
+            <input class="booking-input" type="email" placeholder="your@email.com"/>
+          </div>
+          <div class="booking-field">
+            <label class="booking-label">Subject</label>
+            <input class="booking-input" type="text" placeholder="What's this about?"/>
+          </div>
+          <div class="booking-field">
+            <label class="booking-label">Message</label>
+            <textarea class="booking-input booking-textarea" style="height:140px;" placeholder="Tell us how we can help..."></textarea>
+          </div>
+          <button class="xp-btn" style="width:100%; justify-content:center; margin-top:1.5rem;">Send Message <span>→</span></button>
+        </div>
+        <div class="contact-info-col">
+          <div class="contact-info-card">
+            <div class="contact-info-icon">✉</div>
+            <p class="contact-info-label">Email</p>
+            <p class="contact-info-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8eeaebfde7e9e0ebfccefde6e1fee7eaebedefa0ede1e3">[email&#160;protected]</a></p>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon">☏</div>
+            <p class="contact-info-label">Phone</p>
+            <p class="contact-info-val">609.678.8362</p>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon">◎</div>
+            <p class="contact-info-label">Studio Hours</p>
+            <p class="contact-info-val">Mon–Fri · 10am–6pm</p>
+            <p class="contact-info-val">Sat · 11am–4pm</p>
+          </div>
+          <div class="contact-social-card">
+            <p class="booking-section-label">Follow Us</p>
+            <div class="contact-socials">
+              <a href="#" class="contact-social-btn">Ins
